@@ -307,7 +307,7 @@ def fillFields(csvfile, fields, campaign, PWG, notCreate_):
 
 def createRequests(requests, num_requests, doDryRun, useDev):
     # Create new requests based on campaign and PWG
-    mcm = restful(dev=useDev) # Get McM connection
+    mcm = McM(dev=useDev) # Get McM connection
 
     if not doDryRun:
         print "Adding {0} requests to McM.".format(num_requests)
@@ -389,7 +389,7 @@ def createRequests(requests, num_requests, doDryRun, useDev):
 
 def modifyRequests(requests, num_requests, doDryRun, useDev, isLHErequest):
     # Modify existing request based on PrepId
-    mcm = restful(dev=useDev) # Get McM connection
+    mcm = McM(dev=useDev) # Get McM connection
 
     if not doDryRun:
         print "Modifying {0} requests to McM.".format(num_requests)
@@ -514,7 +514,7 @@ def modifyRequests(requests, num_requests, doDryRun, useDev, isLHErequest):
 
 def cloneRequests(requests, num_requests, doDryRun, useDev, cloneId_):
     # Create new requests be cloning an old one based on PrepId
-    mcm = restful(dev=useDev) # Get McM connection
+    mcm = McM(dev=useDev) # Get McM connection
 
     if not doDryRun:
         print "Adding {0} requests to McM using clone.".format(num_requests)
